@@ -2025,7 +2025,20 @@ document.addEventListener("DOMContentLoaded", function() {
         e.preventDefault(); 
         toggleTerms(); 
     });
+document.addEventListener("DOMContentLoaded", function() {
+    // Continue to Payment බොත්තම සොයාගැනීම
+    const paymentBtn = document.querySelector('button[type="submit"]');
 
+    if (paymentBtn) {
+        paymentBtn.addEventListener('click', function(e) {
+            // බොත්තම අක්‍රීය (Disabled) වී නැත්නම් පමණක් ක්‍රියාත්මක වේ
+            if (!this.disabled) {
+                e.preventDefault(); // Form එක Submit වීම නවත්වයි
+                window.location.href = "Confirmo.html"; // Confirmo පිටුවට යොමු කරයි
+            }
+        });
+    }
+});
 });
 </script>
 </body>
